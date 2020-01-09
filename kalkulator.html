@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>Kalkulator Sederhana</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        </head>
+
+    <body>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label"><h3>Kalkulator Sederhana</h3></label>
+                    <div class="col-sm-8">
+                        <br>
+                        <input type="text" name="input1" id="input1" class="form-control">
+                            <input type="checkbox" class="cek" id="cek_1" value="1">
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                    <input type="text" name="input2" id="input2" class="form-control">
+                            <input type="checkbox" class="cek" value="1" id="cek_2">
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                    <input type="text" name="input3" id="input3" class="form-control">
+                            <input type="checkbox" class="cek" value="1" id="cek_3">
+                    </div>
+                </div>
+            </div><br>
+                <button type="button" id ="pluss" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> +</button>
+                <button type="button" id ="minus" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> -</button>
+                <button type="button" id ="kali" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> x</button>
+                <button type="button" id ="bagi" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> /</button>
+                <br><br>
+                <hr size="1px" width="15%" align="left">
+                <br>
+                <label>Hasil :</label>
+               <input type="text" id="hasil" >
+
+    <script>
+                var ckbox = $('#cek_1');
+                var ckbox2 = $('#cek_2');
+                var ckbox3 = $('#cek_3');
+                var input_1=0;
+                var input_2=0;
+                var input_3=0;
+     
+                // $(document).ready(function () {
+        
+                    $('input').on('click',function () {
+                        if (ckbox.is(':checked')) {
+                            input_1 = $('#input1').val();
+                        }
+                    });
+                    $('input').on('click',function () {
+                        if (ckbox2.is(':checked')) {
+                            input_2 = $('#input2').val();
+                        }
+                    });
+                    $('input').on('click',function () {
+                        if (ckbox3.is(':checked')) {
+                            input_3 = $('#input3').val();
+                        }
+                    });
+                
+        
+                $( "#pluss" ).click(function() {
+                    if ($('.cek').filter(':checked').length < 2) {
+                        alert('anda harus mencentang 2 atau lebih inputan')
+                    }else{
+                         ($('#hasil').val(parseInt(input_1) + parseInt(input_2) + parseInt(input_3)));
+    
+                    }
+                });
+
+                $( "#minus" ).click(function() {
+                    if ($('.cek').filter(':checked').length < 2) {
+                        alert('anda harus mencentang 2 atau lebih inputan')
+                    }else{
+                        ($('#hasil').val(parseInt(input_1) - parseInt(input_2) - parseInt(input_3))); 
+                    }
+                });
+
+                $( "#kali" ).click(function() {
+                    if ($('.cek').filter(':checked').length < 2) {
+                        alert('anda harus mencentang 2 atau lebih inputan')
+                    }else{
+                        ($('#hasil').val(parseInt(input_1) * parseInt(input_2) * parseInt(input_3))); 
+                    }
+                });
+
+                $( "#bagi" ).click(function() {
+                    if ($('.cek').filter(':checked').length < 2) {
+                        alert('anda harus mencentang 2 atau lebih inputan')
+                    }else{
+                        ($('#hasil').val(parseInt(input_1) / parseInt(input_2) / parseInt(input_3))); 
+                    }
+                });
+
+                
+        
+            </script>
+        </div>
+    </body>
+</html>
+         
