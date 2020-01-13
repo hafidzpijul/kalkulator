@@ -1,11 +1,13 @@
 <html>
     <head>
         <title>Kalkulator Sederhana</title>
+        <!-- memanggil jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         </head>
 
     <body>
         <div class="row">
+            <!-- variable nilai input 1 -->
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="col-sm-4 control-label"><h3>Kalkulator Sederhana</h3></label>
@@ -16,7 +18,7 @@
                     </div>
                 </div>
             </div><br>
-
+            <!-- variable nilai input 2 -->
             <div class="col-lg-4">
                 <div class="form-group">
                     <div class="col-sm-10">
@@ -25,7 +27,7 @@
                     </div>
                 </div>
             </div><br>
-
+            <!-- variable nilai input 3 -->
             <div class="col-lg-4">
                 <div class="form-group">
                     <div class="col-sm-10">
@@ -34,6 +36,7 @@
                     </div>
                 </div>
             </div><br>
+            <!-- Buttom -->
                 <button type="button" id ="pluss" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> +</button>
                 <button type="button" id ="minus" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> -</button>
                 <button type="button" id ="kali" class="btn btn-success btn-rounded m-b-10 m-l-5"><i></i> x</button>
@@ -45,15 +48,16 @@
                <input type="text" id="hasil" >
 
     <script>
-                var ckbox = $('#cek_1');
-                var ckbox2 = $('#cek_2');
-                var ckbox3 = $('#cek_3');
-                var input_1=0;
-                var input_2=0;
-                var input_3=0;
+                var ckbox = $('#cek_1'); // get atribut checkbox 1
+                var ckbox2 = $('#cek_2'); // get atribut checkbox 2
+                var ckbox3 = $('#cek_3'); // get atribut checkbox 3
+                var input_1=0; // Variable nilai input 1 atau nilai ke 1
+                var input_2=0; // Variable nilai input 1 atau nilai ke 2
+                var input_3=0; // Variable nilai input 1 atau nilai ke 3
      
                 // $(document).ready(function () {
         
+                 // function change untuk merubah nilai secara otomatis dengan menggunakan checkbox dengan value id input
                     $('input').change('click',function () {
                         if (ckbox.is(':checked')) {
                             input_1 = $('#input1').val();
@@ -70,7 +74,7 @@
                         }
                     });
                 
-        
+                //function click penjumlahan
                 $( "#pluss" ).click(function() {
                     if ($('.cek').filter(':checked').length < 2) {
                         alert('anda harus mencentang 2 atau lebih inputan')
@@ -79,15 +83,17 @@
     
                     }
                 });
-
+        
+                //function click pengurangan
                 $( "#minus" ).click(function() {
-                    if ($('.cek').filter(':checked').length < 2) {
+                    if ($('.cek').filter(':checked').length < 2) { // jika nilai yang difilter kurang dari 2 makan akan muncul alert, dan jika lebih dari 1 maka akan muncul hasil
                         alert('anda harus mencentang 2 atau lebih inputan')
                     }else{
                         ($('#hasil').val(parseInt(input_1) - parseInt(input_2) - parseInt(input_3))); 
                     }
                 });
-
+        
+                //function click perkalian
                 $( "#kali" ).click(function() {
                     if ($('.cek').filter(':checked').length < 2) {
                         alert('anda harus mencentang 2 atau lebih inputan')
@@ -95,7 +101,8 @@
                         ($('#hasil').val(parseInt(input_1) * parseInt(input_2) * parseInt(input_3))); 
                     }
                 });
-
+        
+                //function click pembagian
                 $( "#bagi" ).click(function() {
                     if ($('.cek').filter(':checked').length < 2) {
                         alert('anda harus mencentang 2 atau lebih inputan')
